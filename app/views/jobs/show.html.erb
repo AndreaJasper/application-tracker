@@ -1,0 +1,35 @@
+<div class="grid grid-col">
+    <%= render partial: 'main_nav' %>
+<div>
+
+<div class="row">
+    <div class="col text-right my-3">
+        <%= link_to "Edit", edit_job_path(@job),class: 'btn btn-main text-light' %>
+        <%= link_to "Delete", job_path(@job), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class: 'text-danger' %>
+    </div>
+</div>
+
+<div class="card shadow">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <h2 class="card-title font-weight-bold"><%= @job.company %></h2>
+                <h6 class="font-weight-bold">Stage</h6>
+                <p><%= @job.stage %></p>
+                <h6 class="font-weight-bold">Position</h6>
+                <p><%= @job.position %></p>
+                <h6 class="font-weight-bold">Contact</h6>
+                <p><%= @job.contact %></p>
+                <h6 class="font-weight-bold">Website</h6>
+                <p><%= @job.website %></p>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <h6 class="font-weight-bold">Comments</h6>
+                <%= @job.comment %>
+            </div>
+        </div>
+    </div>
+</div>

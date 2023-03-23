@@ -1,0 +1,44 @@
+<div class="grid grid-col">
+    <%= render partial: 'main_nav' %>
+<div>
+
+<div class="row">
+    <% @jobs.each do |j| %>
+        <div class="col-sm-12 col-md-6">
+            <div class="card shadow my-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h5 class="card-title font-weight-bold"><%= link_to j.company, job_path(j.id) %></h5>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <p class="text-right"><%= j.date_applied.strftime("%m-%d-%Y") %></p>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <h6><%= j.position %></h6>
+                                <p><%= j.contact %></p>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <p class="text-right text-blue"><%= j.stage %></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <%= link_to "Edit", edit_job_path(j), class: 'btn btn-main text-light' %>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-right">
+                                <%= link_to "Delete", job_path(j), data: {
+                                    turbo_method: :delete,
+                                    turbo_confirm: "Are you sure?"
+                                }, class: 'text-danger' %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

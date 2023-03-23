@@ -1,0 +1,52 @@
+<div class="card shadow mt-3">
+  <div class="card-body">
+    <%= form_with model: @job do |f| %>
+      <div class="row">
+        <div class="col w-100">
+          <%= f.label :company, class: 'font-weight-bold' %><br>
+          <%= f.text_field :company, class: 'form-control' %>
+        </div>
+        <div class="col w-100">
+          <%= f.label :date_applied, class: 'font-weight-bold' %><br>
+          <%= f.date_field :date_applied, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col w-100">
+          <%= f.label :stage, class: 'font-weight-bold' %><br>
+          <%= f.text_field :stage, class: 'form-control'  %>
+        </div>
+        <div class="col w-100">
+          <%= f.label :position, class: 'font-weight-bold' %><br>
+          <%= f.text_field :position, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col w-100">
+          <%= f.label :website, class: 'font-weight-bold' %><br>
+          <%= f.text_field :website, class: 'form-control'  %>
+        </div>
+        <div class="col w-100">
+          <%= f.label :contact, class: 'font-weight-bold' %><br>
+          <%= f.text_field :contact, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col w-100">
+          <%= f.label :comment, class: 'font-weight-bold' %><br>
+        <%= f.text_area :comment, rows: 10, class: 'form-control'  %>
+        </div>
+      </div>
+
+      <% @job.errors.full_messages_for(:comment).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+
+      <div class="row mt-3">
+        <div class="col w-100">
+          <%= f.submit class: 'btn btn-main text-light' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

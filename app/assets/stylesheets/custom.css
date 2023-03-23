@@ -1,0 +1,44 @@
+:root {
+    --dk-blue: #3F4F74;
+    --lt-blue: #7dbdd8;
+    --black: #333;
+    --grey: #EEEDE9;
+    --white: #fff;
+}
+
+body {
+    background: rgb(23,26,33);
+    background: linear-gradient(90deg, rgba(23,26,33,1) 0%, rgba(27,34,50,1) 35%, rgba(23,26,33,1) 100%);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--black);
+}
+
+hr {
+    width: 50px;
+    color: var(--lt-blue);
+    border: 2px solid var(--lt-blue);
+}
+
+.logo {
+    color: var(--dk-blue);
+    font-size: 2rem;
+}
+
+.text-blue {
+    color: var(--dk-blue);
+}
+
+.card-title, .card-title a {
+    color: var(--dk-blue)
+}
+
+.btn-main {
+    background-color: var(--dk-blue);
+    font: var(--white)!important;
+}
+
+input, textarea {
+    width: 100%;
+}

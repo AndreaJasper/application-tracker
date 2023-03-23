@@ -1,0 +1,10 @@
+<div class="row mt-3">
+    <div class="col-sm-12 col-md-6">
+        <h1>New Job</h1>
+    </div>
+    <div class="col-sm-12 col-md-6 text-right">
+        <%= link_to 'Back', jobs_path, class: 'btn btn-main text-light' %>
+    </div>
+</div>
+
+<%= render "form", job: @job %>
